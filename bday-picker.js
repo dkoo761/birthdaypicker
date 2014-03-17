@@ -85,10 +85,10 @@
 
       var hiddenDate;
       if (settings["defaultDate"]) {
-        var defDate = new Date(settings["defaultDate"] + "T00:00:00"),
-        defYear = defDate.getFullYear(),
-        defMonth = defDate.getMonth() + 1,
-        defDay = defDate.getDate();
+        var defDate = new Date(settings["defaultDate"] + "T00:00:00Z"),
+        defYear = defDate.getUTCFullYear(),
+        defMonth = defDate.getUTCMonth() + 1,
+        defDay = defDate.getUTCDate();
         if (defMonth<10) defMonth="0"+defMonth;
         if (defDay<10) defDay="0"+defDay;
         hiddenDate = defYear + "-" + defMonth + "-" + defDay;
@@ -116,10 +116,10 @@
 
       // Set the default date if given
       if (settings["defaultDate"]) {
-        var date = new Date(settings["defaultDate"] + "T00:00:00");
-        $year.val(date.getFullYear());
-        $month.val(date.getMonth() + 1);
-        $day.val(date.getDate());
+        var date = new Date(settings["defaultDate"] + "T00:00:00Z");
+        $year.val(date.getUTCFullYear());
+        $month.val(date.getUTCMonth() + 1);
+        $day.val(date.getUTCDate());
       }
 
       // Update the option sets according to options and user selections
